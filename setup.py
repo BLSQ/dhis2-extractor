@@ -22,6 +22,7 @@ setup(
         "numpy==1.*",
         "pandas==1.*",
         "pytest==6.*",
+        "s3fs==2021.*",
     ],
     entry_points="""
         [console_scripts]

@@ -13,15 +13,23 @@ def cli(debug):
 @click.argument("api_url")
 @click.option("--username", "-u")
 @click.option("--password", "-p")
-@click.option("--output-format", "-f", default=Dhis2Extractor.FORMAT_CSV, help="Only csv for now")
-@click.option("--output-path", "-o", help="An optional path to store the extracted data (use stdout if not provided)")
+@click.option(
+    "--output-format", "-f", default=Dhis2Extractor.FORMAT_CSV, help="Only csv for now"
+)
+@click.option(
+    "--output-path",
+    "-o",
+    help="An optional path to store the extracted data (use stdout if not provided)",
+)
 def extract(api_url, username, password, output_format, output_path):
     """Extract organisation units from a specific DHIS2 instance."""
 
     click.echo(f"Extracting org units for {api_url}")
 
     extractor = Dhis2Extractor(api_url, username=username, password=password)
-    output = extractor.extract_organisation_units(output_format=output_format, output_path=output_path)
+    output = extractor.extract_organisation_units(
+        output_format=output_format, output_path=output_path
+    )
     if output is not None:
         click.echo(output)
 

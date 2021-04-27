@@ -49,3 +49,7 @@ The `docker-compose.yaml` file is meant for development: it will mount the repo 
 ```bash
 docker-compose run app extract https://play.dhis2.org/demo -u admin -p district -f csv -o output/test.csv 
 ```
+
+## Other remarks
+
+We use `black` for code formatting (see [documentation](https://github.com/psf/black)).
