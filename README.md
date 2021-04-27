@@ -32,3 +32,20 @@ extractor = Dhis2Extractor(
 )
 output = extractor.extract_organisation_units(output_format="csv")
 ```
+
+## Docker
+
+This package provides a `Dockerfile` to package the image. You can build the image locally using:
+
+```bash
+docker build -t blsq/dhis2_extractor:latest -t blsq/dhis2_extractor:0.x.x .
+```
+
+We also provide a GitHub workflow (see `.github/workflows/build_image.yml`) that is triggered either manually or 
+when publishing a release.
+
+The `docker-compose.yaml` file is meant for development: it will mount the repo root directory in the container.
+
+```bash
+docker-compose run app extract https://play.dhis2.org/demo -u admin -p district -f csv -o output/test.csv 
+```
