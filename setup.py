@@ -20,5 +20,6 @@ setup(
         "dhis2.py==2.*",
         "numpy==1.*",
         "pandas==1.*",
+        "pytest==6.*",
     ],
 )
