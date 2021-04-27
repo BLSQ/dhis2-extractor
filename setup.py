@@ -17,9 +17,14 @@ setup(
     license="MIT",
     packages=find_packages(include=["dhis2_extractor", "dhis2_extractor.*"]),
     install_requires=[
+        "click==7.*",
         "dhis2.py==2.*",
         "numpy==1.*",
         "pandas==1.*",
         "pytest==6.*",
     ],
+    entry_points="""
+        [console_scripts]
+        dhis2_extractor=dhis2_extractor.cli
+    """,
 )

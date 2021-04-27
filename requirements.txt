@@ -1,3 +1,4 @@
+click==7.*
 dhis2.py==2.*
 numpy==1.*
 pandas==1.*
